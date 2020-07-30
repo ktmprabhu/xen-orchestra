@@ -1117,6 +1117,7 @@ const messages = {
 
   // ----- VM network tab -----
 
+  editVifLockingModeTooltip: 'Edit locking mode',
   aclRuleAllow: 'Allow the traffic',
   aclRuleProtocol: 'Select a protocol',
   aclRulePort: 'Select a port',

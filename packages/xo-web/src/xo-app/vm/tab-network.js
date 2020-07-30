@@ -286,11 +286,11 @@ class VifStatus extends BaseComponent {
     () => this.props.vif.lockingMode,
     () => get(() => this.props.network.defaultIsLocked),
     (vifLockingMode, networkDefaultIsLocked) =>
-      vifLockingMode === 'network_default' && networkDefaultIsLocked
+      vifLockingMode !== 'network_default'
+        ? vifLockingMode
+        : networkDefaultIsLocked
         ? 'network_default: disabled'
-        : vifLockingMode === 'network_default'
-        ? 'network_default: unlocked'
-        : vifLockingMode
+        : 'network_default: unlocked'
   )
 
   _getNetworkStatus = () => {
@@ -355,7 +355,7 @@ class VifStatus extends BaseComponent {
     )
   }
 
-  _onBlurEditLockingMode = () =>
+  _closeLockingModeEdition = () =>
     this.setState({ editLockingMode: !this.state.editLockingMode })
 
   _onChangeVif = event => {
@@ -392,7 +392,7 @@ class VifStatus extends BaseComponent {
         {editLockingMode ? (
           <select
             className='form-control'
-            onBlur={this._onBlurEditLockingMode}
+            onBlur={this._closeLockingModeEdition}
             onChange={this._onChangeVif}
             value={this._getLockingModeValue()}
           >

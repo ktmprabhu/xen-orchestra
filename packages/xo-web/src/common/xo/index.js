@@ -1779,16 +1779,26 @@ export const deleteVifs = vifs =>
 
 export const setVif = (
   vif,
-  { allowedIpv4Addresses, allowedIpv6Addresses, mac, network, rateLimit }
+  {
+    allowedIpv4Addresses,
+    allowedIpv6Addresses,
+    lockingMode,
+    mac,
+    network,
+    rateLimit,
+  }
 ) =>
   _call('vif.set', {
     allowedIpv4Addresses,
     allowedIpv6Addresses,
     id: resolveId(vif),
+    lockingMode,
     mac,
     network: resolveId(network),
     rateLimit,
   })
+
+export const getLockingModeValues = () => _call('vif.getLockingModeValues')
 
 export const addAclRule = ({
   allow,

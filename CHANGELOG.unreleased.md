@@ -7,11 +7,12 @@
 
 > Users must be able to say: “Nice enhancement, I'm eager to test it”
 
+- [Self/VDI migration] Ability to migrate VDIs to other SRs within the resource sets [#5020](https://github.com/vatesfr/xen-orchestra/issues/5020) (PR [#5201](https://github.com/vatesfr/xen-orchestra/pull/5201))
+
 ### Bug fixes
 
 > Users must be able to say: “I had this issue, happy to know it's fixed”
 
-- [Self/VDI migration] Ability to migrate VDIs to other SRs within the resource sets [#5020](https://github.com/vatesfr/xen-orchestra/issues/5020) (PR [#5201](https://github.com/vatesfr/xen-orchestra/pull/5201))
 
 ### Packages to release
 
@@ -30,4 +31,4 @@
 >
 > In case of conflict, the highest (lowest in previous list) `$version` wins.
 
-xo-server-sdn-controller patch
+- xo-web minor

@@ -1785,6 +1785,7 @@ export const setVif = (
     lockingMode,
     mac,
     network,
+    networkDefaultIsLocked,
     rateLimit,
   }
 ) =>
@@ -1795,6 +1796,7 @@ export const setVif = (
     lockingMode,
     mac,
     network: resolveId(network),
+    networkDefaultIsLocked,
     rateLimit,
   })
 

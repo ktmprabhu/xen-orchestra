@@ -356,7 +356,7 @@ class VifStatus extends BaseComponent {
   }
 
   _closeLockingModeEdition = () =>
-    this.setState({ editLockingMode: !this.state.editLockingMode })
+    this.setState({ isLockingModeEdition: !this.state.isLockingModeEdition })
 
   _onChangeVif = event => {
     const { network, vif } = this.props
@@ -374,7 +374,7 @@ class VifStatus extends BaseComponent {
 
   render() {
     const { vif } = this.props
-    const { editLockingMode } = this.state
+    const { isLockingModeEdition } = this.state
 
     return (
       <div>
@@ -389,7 +389,7 @@ class VifStatus extends BaseComponent {
           state={vif.attached}
         />{' '}
         {this._getNetworkStatus()}{' '}
-        {editLockingMode ? (
+        {isLockingModeEdition ? (
           <select
             className='form-control'
             onBlur={this._closeLockingModeEdition}
@@ -406,7 +406,7 @@ class VifStatus extends BaseComponent {
           <ActionButton
             btnStyle='primary'
             icon='edit'
-            handler={this.toggleState('editLockingMode')}
+            handler={this.toggleState('isLockingModeEdition')}
             size='small'
             tooltip={_('editVifLockingModeTooltip')}
           />
